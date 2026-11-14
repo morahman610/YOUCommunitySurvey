@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youth of Ummah • Community Needs & Interests Survey</title>
+  <link rel="icon" type="image/png" href="youth-of-ummah-logo.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="community-bg text-ink h-screen w-screen overflow-hidden flex flex-col justify-between relative">
+
+  <!-- Decorative subtle community arch accents -->
+  <div class="pointer-events-none fixed inset-0 overflow-hidden z-0" aria-hidden="true">
+    <svg class="absolute -top-24 -right-24 w-96 h-96 text-sage-500/[0.05]" viewBox="0 0 200 200" fill="currentColor">
+      <circle cx="100" cy="100" r="88" />
+    </svg>
+    <svg class="absolute -bottom-28 -left-24 w-[28rem] h-[28rem] text-terracotta-500/[0.05]" viewBox="0 0 200 200" fill="currentColor">
+      <circle cx="100" cy="100" r="90" />
+    </svg>
+  </div>
+
+  <!-- Top Progress Bar -->
+  <div class="fixed top-0 left-0 w-full h-2 bg-[#E9E1D5] z-50">
+    <div id="progress-bar" class="h-full bg-gradient-to-r from-sage-500 via-sage-400 to-terracotta-500 transition-all duration-500 ease-out w-0 rounded-r-full"></div>
+  </div>
+
+  <!-- Top Header -->
+  <header class="relative z-10 w-full max-w-4xl mx-auto px-6 pt-5 pb-2 flex justify-between items-center text-xs text-stonewarm shrink-0">
+    <div class="flex items-center gap-3 font-semibold text-ink">
+      <img src="youth-of-ummah-logo.png" alt="Youth of Ummah logo" class="h-10 w-auto object-contain shrink-0 drop-shadow-sm" />
+      <div class="flex flex-col leading-tight">
+        <span class="text-[11px] uppercase tracking-wider text-sage-700 font-bold">Youth of Ummah</span>
+        <span id="section-badge" class="tracking-tight text-xs text-stonewarm font-medium">Community Needs &amp; Interests Survey</span>
+      </div>
+    </div>
+    <div id="step-counter" class="font-semibold text-sage-700 bg-sage-50 border border-sage-200/80 px-2.5 py-1 rounded-full empty:hidden"></div>
+  </header>
+
+  <!-- Main Question Viewport -->
+  <main class="relative z-10 flex-1 overflow-y-auto flex items-center justify-center px-5 sm:px-6 py-4">
+    <div id="question-container" class="w-full max-w-3xl my-auto">
+      <!-- Dynamic Question Content Injected Here -->
+    </div>
+  </main>
+
+  <!-- Bottom Bar & Keyboard Navigation Controls -->
+  <footer class="relative z-10 w-full max-w-4xl mx-auto px-6 pb-5 pt-3 flex justify-between items-center shrink-0 border-t border-[#E6DDD0]/80 bg-cream/85 backdrop-blur-md">
+    <div class="text-xs text-stonewarm hidden sm:flex items-center gap-4">
+      <span><kbd class="px-1.5 py-0.5 bg-white border border-[#D8CFC1] rounded-md text-ink font-medium shadow-[0_1px_0_#D8CFC1]">Enter ↵</kbd> Next</span>
+      <span><kbd class="px-1.5 py-0.5 bg-white border border-[#D8CFC1] rounded-md text-ink font-medium shadow-[0_1px_0_#D8CFC1]">←</kbd> <kbd class="px-1.5 py-0.5 bg-white border border-[#D8CFC1] rounded-md text-ink font-medium shadow-[0_1px_0_#D8CFC1]">→</kbd> Prev / Next</span>
+      <span><kbd class="px-1.5 py-0.5 bg-white border border-[#D8CFC1] rounded-md text-ink font-medium shadow-[0_1px_0_#D8CFC1]">A</kbd>–<kbd class="px-1.5 py-0.5 bg-white border border-[#D8CFC1] rounded-md text-ink font-medium shadow-[0_1px_0_#D8CFC1]">P</kbd> / <kbd class="px-1.5 py-0.5 bg-white border border-[#D8CFC1] rounded-md text-ink font-medium shadow-[0_1px_0_#D8CFC1]">1</kbd>–<kbd class="px-1.5 py-0.5 bg-white border border-[#D8CFC1] rounded-md text-ink font-medium shadow-[0_1px_0_#D8CFC1]">5</kbd> Select</span>
+    </div>
+
+    <!-- On-Screen Left / Right Arrow Buttons -->
+    <div class="flex items-center gap-1.5 ml-auto">
+      <button id="btn-prev" title="Previous question (Left Arrow)"
+        class="p-2.5 rounded-xl bg-white hover:bg-linen border border-[#DDD4C6] text-ink shadow-sm disabled:opacity-35 disabled:pointer-events-none transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="btn-next" title="Next question (Right Arrow / Enter)"
+        class="p-2.5 rounded-xl bg-white hover:bg-linen border border-[#DDD4C6] text-ink shadow-sm disabled:opacity-35 disabled:pointer-events-none transition">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

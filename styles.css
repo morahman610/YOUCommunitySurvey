@@ -1,0 +1,62 @@
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: #FAF7F2;
+  color: #1E2723;
+  user-select: none;
+}
+
+input, textarea, .selectable-text {
+  user-select: text;
+}
+
+/* Warm sunlit ambient background */
+.community-bg {
+  background-color: #FAF7F2;
+  background-image:
+    radial-gradient(circle at 12% 14%, rgba(38, 125, 100, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 88% 18%, rgba(201, 106, 50, 0.09) 0%, transparent 40%),
+    radial-gradient(circle at 50% 92%, rgba(217, 159, 67, 0.08) 0%, transparent 45%);
+}
+
+/* Smooth slide transitions between questions */
+.slide-enter-next {
+  animation: slideInNext 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.slide-enter-prev {
+  animation: slideInPrev 0.36s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes slideInNext {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInPrev {
+  from { opacity: 0; transform: translateY(-28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typeform-style hotkey blink before auto-advance */
+.blink-select {
+  animation: blinkPulse 0.15s ease-in-out 2;
+}
+@keyframes blinkPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* Validation error shake */
+.shake {
+  animation: shakeAnim 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+@keyframes shakeAnim {
+  10%, 90% { transform: translateX(-2px); }
+  20%, 80% { transform: translateX(4px); }
+  30%, 50%, 70% { transform: translateX(-6px); }
+  40%, 60% { transform: translateX(6px); }
+}
+
+/* Custom subtle scrollbar for long multi-select lists on small screens */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D6CEC2; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #BFB4A4; }
